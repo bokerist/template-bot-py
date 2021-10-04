@@ -16,7 +16,7 @@ def version():
 
 @app.route("/bet", methods=["POST"])
 def bet():
-  return str(Player().bet(request.json))
+  return str(Player().bet(request.get_json()))
 
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
